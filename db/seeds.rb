@@ -14,6 +14,13 @@ Classroom.create(course_name: 'Science', semester: "Spring #{Time.now.year}")
 Classroom.create(course_name: 'Chemistry', semester: "Fall #{Time.now.year}")
 
 
-Classroom.all.each_with_index do |classroom, i|
-  classroom.students << [Student.limit(8).offset(i*2)]
+Classroom.all.each_with_index do |classroom, n|
+  classroom.students << [Student.limit(8).offset(n*2)]
 end
+
+# 4 times total
+# 0 - skip first 0 records
+# 1 - skip first 2 records
+# 2 - skip first 4 records
+# 3 - skip first 6 records
+# uniqueness per classroom is not required; classrooms 1-4 are populated with 8 students total, incrementing student id by 2 for each pass

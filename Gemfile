@@ -37,7 +37,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails',      ">= 2.0.0.beta"
   gem 'annotate'
+  gem 'awesome_print'
   gem 'faker', "~> 2.4.0"
+  gem 'byebug', '~> 9.0', '>= 9.0.6'
 end
 
 group :development do
